@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lesti_Merge>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core/>
+            </depends>
+        </Lesti_Merge>
+    </modules>
+</config>

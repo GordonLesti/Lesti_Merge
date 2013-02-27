@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lesti_Merge>
+            <version>0.1.0</version>
+        </Lesti_Merge>
+    </modules>
+    <global>
+        <models>
+            <core>
+                <rewrite>
+                    <layout_update>Lesti_Core_Model_Layout_Update</layout_update>
+                </rewrite>
+            </core>
+        </models>
+    </global>
+</config>
