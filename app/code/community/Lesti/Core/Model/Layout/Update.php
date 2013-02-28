@@ -21,9 +21,20 @@ class Lesti_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
     public function getFileLayoutUpdatesXml($area, $package, $theme, $storeId = null)
     {
         $xml = parent::getFileLayoutUpdatesXml($area, $package, $theme, $storeId);
-        $methods = array('addJs', 'addCss', 'addItem');
-        foreach($xml->children() as $handle => $child){
-            foreach($methods as $method) {
+        $shouldMergeJs = Mage::getStoreConfigFlag('dev/js/merge_files');
+        $shouldMergeCss = Mage::getStoreConfigFlag('dev/css/merge_css_files');
+        $methods = array();
+        if($shouldMergeJs) {
+            $methods[] = 'addJs';
+        }
+        if($shouldMergeCss) {
+            $methods[] = 'addCss';
+        }
+        if($shouldMergeJs || $shouldMergeCss) {
+            $methods[] = 'addItem';
+        }
+        foreach($methods as $method) {
+            foreach($xml->children() as $handle => $child){
                 $items = $child->xpath(".//action[@method='".$method."']");
                 foreach($items as $item) {
                     $params = $item->xpath("params");
