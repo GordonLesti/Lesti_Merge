@@ -6,7 +6,7 @@
  * Time: 09:35
  * To change this template use File | Settings | File Templates.
  */
-class Lesti_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
+class Lesti_Merge_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
 {
 
     /**
@@ -40,7 +40,11 @@ class Lesti_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
                     $params = $item->xpath("params");
                     if(count($params)) {
                         foreach($params as $param){
-                            $param->{0} = (string)$param . ' handle="' . $handle . '"';
+                            if(trim($param)) {
+                                $param->{0} = (string)$param . ' handle="' . $handle . '"';
+                            } else {
+                                $param->{0} = 'handle="' . $handle . '"';
+                            }
                         }
                     } else {
                         $item->addChild('params', 'handle="'.$handle.'"');
