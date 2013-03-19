@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <dev>
+            <groups>
+                <js>
+                    <fields>
+                        <merge_js_by_handle translate="label">
+                            <label>Merge JS By Handle</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>Groups JS Files by Layout-Handle, only work if Merging is enabled.</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </merge_js_by_handle>
+                    </fields>
+                </js>
+                <css>
+                    <fields>
+                        <merge_css_by_handle translate="label">
+                            <label>Merge CSS By Handle</label>
+                            <frontend_type>select</frontend_type>
+                            <comment>Groups CSS Files by Layout-Handle, only work if Merging is enabled.</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </merge_css_by_handle>
+                    </fields>
+                </css>
+            </groups>
+        </dev>
+    </sections>
+</config>

@@ -21,8 +21,10 @@ class Lesti_Merge_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
     public function getFileLayoutUpdatesXml($area, $package, $theme, $storeId = null)
     {
         $xml = parent::getFileLayoutUpdatesXml($area, $package, $theme, $storeId);
-        $shouldMergeJs = Mage::getStoreConfigFlag('dev/js/merge_files');
-        $shouldMergeCss = Mage::getStoreConfigFlag('dev/css/merge_css_files');
+        $shouldMergeJs = Mage::getStoreConfigFlag('dev/js/merge_files') &&
+            Mage::getStoreConfigFlag('dev/js/merge_js_by_handle');
+        $shouldMergeCss = Mage::getStoreConfigFlag('dev/css/merge_css_files') &&
+            Mage::getStoreConfigFlag('dev/css/merge_css_by_handle');
         $methods = array();
         if($shouldMergeJs) {
             $methods[] = 'addJs';
