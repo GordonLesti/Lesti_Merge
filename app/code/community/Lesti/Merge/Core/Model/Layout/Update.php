@@ -43,13 +43,13 @@ class Lesti_Merge_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
                     if(count($params)) {
                         foreach($params as $param){
                             if(trim($param)) {
-                                $param->{0} = (string)$param . ' handle="' . $handle . '"';
+                                $param->{0} = (string)$param . ' title="' . $handle . '"';
                             } else {
-                                $param->{0} = 'handle="' . $handle . '"';
+                                $param->{0} = 'title="' . $handle . '"';
                             }
                         }
                     } else {
-                        $item->addChild('params', 'handle="'.$handle.'"');
+                        $item->addChild('params', 'title="'.$handle.'"');
                     }
                 }
             }
