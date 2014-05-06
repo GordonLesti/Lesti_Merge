@@ -8,6 +8,7 @@
  */
 class Lesti_Merge_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
 {
+	const HANDLE_ATTRIBUTE = 'data-handle'; //attribute used to store handle
 
     /**
      * Collect and merge layout updates from file
@@ -47,13 +48,13 @@ class Lesti_Merge_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
                         if(count($params)) {
                             foreach($params as $param){
                                 if(trim($param)) {
-                                    $param->{0} = (string)$param . ' title="' . $handle . '"';
+                                    $param->{0} = (string)$param . ' ' . static::HANDLE_ATTRIBUTE . '="' . $handle . '"';
                                 } else {
-                                    $param->{0} = 'title="' . $handle . '"';
+                                    $param->{0} = static::HANDLE_ATTRIBUTE . '="' . $handle . '"';
                                 }
                             }
                         } else {
-                            $item->addChild('params', 'title="'.$handle.'"');
+                            $item->addChild('params', static::HANDLE_ATTRIBUTE . '="'.$handle.'"');
                         }
                     }
                 }
