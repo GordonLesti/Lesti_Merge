@@ -1,0 +1,14 @@
+{
+    "name": "lesti/merge",
+    "description": "Smart Merging of Js and Css in Magento",
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "Gordon Lesti",
+            "email": "info@gordonlesti.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
