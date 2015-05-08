@@ -8,7 +8,7 @@
  */
 class Lesti_Merge_Core_Model_Layout_Update extends Mage_Core_Model_Layout_Update
 {
-	const HANDLE_ATTRIBUTE = 'data-handle'; //attribute used to store handle
+    const HANDLE_ATTRIBUTE = 'data-handle'; //attribute used to store handle
 
     /**
      * Collect and merge layout updates from file
